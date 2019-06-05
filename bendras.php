@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Apie šalis trumpai</title>
+
+	
+	<?php include "functions.php"; ?>
 	<?php include 'header.php';?>
 </head>
 <body>
@@ -24,6 +27,8 @@
 </div>
 
 <?php include 'footer.php'; ?>
+
+
 
 </body>
 </html>
