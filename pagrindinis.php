@@ -14,7 +14,11 @@
 <?php include "menu.php"; ?>
 
 <div class="container">
-	<button class="center-align dk-page-title">SVEIKI ATVYKE ;) </button>
+	<div class="center-align">
+	<a href="bendras.php">
+		<button class="dk-page-title">SVEIKI ATVYKE ;)</button>
+	</a>
+	</div>
 </div>
 	
 	<script type="text/javascript" src="js/materialize.min.js"></script>
