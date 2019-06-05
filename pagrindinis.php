@@ -14,7 +14,7 @@
 <?php include "menu.php"; ?>
 
 <div class="container">
-	<h1 class="center-align dk-page-title">SVEIKI ATVYKE ;) </h1>
+	<button class="center-align dk-page-title">SVEIKI ATVYKE ;) </button>
 </div>
 	
 	<script type="text/javascript" src="js/materialize.min.js"></script>
