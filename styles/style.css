@@ -24,7 +24,8 @@
 	background-image: url("../images/193154.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
-	position: relative;
+	position: absolute;
+	width: 100%;
 	height: 1000px;
 	background-color: grey;
 	background-size: cover;
@@ -39,5 +40,11 @@
 .brand-logo{
 	position: relative;
 	height: 100%;
-	width: 10%;
+	
+}
+.container{
+	position: relative;
+}
+.dk-page-title{
+	margin-top: 200px;
 }
