@@ -2,10 +2,13 @@
 <html>
 <head>
 	<title>Šablonas</title>
-
+	<?php include "functions.php"; ?>
+	
 </head>
-<body>
 
+<body>
+	<?php include "header.php"; ?>
+	
 	<?php
 	$servername = "localhost";
 	$username = "root";
@@ -66,5 +69,6 @@
 	?>
 
 <script type="text/javascript" src="js/materialize.min.js"></script>
+<?php include "footer.php"; ?>
 </body>
 </html>
