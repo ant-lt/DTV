@@ -1,27 +1,9 @@
 * {
 	box-sizing: border-box;}
 
-.tg_konteineris {
-	max-width: 992px;
-	margin-left: auto;
-	margin-right: auto;
-}
-.tg_deze {
-	border: 2px;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	width: 100%;
-	
-}
 
-.tg_centras {
-	text-align: center;
-}
 
-.centered{
-	text-align: center;
-}
+
 
 .dk_background{
 	background-image: url("../images/193154.jpg");
@@ -43,4 +25,12 @@
 	position: relative;
 	height: 100%;
 	width: 10%;
+}
+
+.tg-nuotrauka{
+	width: 100%;
+
+}
+.tg-remelis{
+	border: 2px solid black;
 }
