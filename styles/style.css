@@ -22,3 +22,25 @@
 .centered{
 	text-align: center;
 }
+
+.dk_background{
+	background-image: url("../images/193154.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	height: 1000px;
+	background-color: grey;
+	background-size: cover;
+}
+.dk_background2{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color:pink;
+	opacity: 0.5;
+}
+.brand-logo{
+	position: relative;
+	height: 100%;
+	width: 10%;
+}
