@@ -35,8 +35,22 @@
 	if (mysqli_num_rows($result) > 0) {
     // output data of each row
 		echo "<div class='container'>";
+		
+
+
 		while($row = mysqli_fetch_assoc($result)) {
     		echo "<div class='row white tg-remelis'>";
+
+echo "<div class='carousel'>";
+    echo "<a class='carousel-item' href='#one!'><img src='https://lorempixel.com/250/250/nature/1'></a>";
+    echo "<a class='carousel-item' href='#two!'><img src='https://lorempixel.com/250/250/nature/2'></a>";
+    echo "<a class='carousel-item' href='#three!'><img src='https://lorempixel.com/250/250/nature/3'></a>";
+    // echo "<a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>";
+    // echo "<a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>";
+  echo "</div>";
+
+
+
     			echo "<div class='col s12 l4 '>";
 
 				echo "<img class='responsive-img materialboxed tg-nuotrauka' src=". $row["Foto"]. ">";
