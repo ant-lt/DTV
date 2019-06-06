@@ -39,7 +39,8 @@
 
 <nav>
   <div class="nav-wrapper">
-   <img class="brand-logo" src="images/logo2.jpg"><a href="https://www.lotustravel.lt" class="brand-logo"></a>
+  <a href="https://www.lotustravel.lt" class="brand-logo"></a>
+   <img class="brand-logo" src="images/logo2.jpg">
    <ul class="right hide-on-med-and-down">
     <li><a href="pagrindinis.php">Pagrindinis</a></li>
     <li><a href="apie.php">Apie mus</a></li>
