@@ -39,7 +39,7 @@
 
 
 		while($row = mysqli_fetch_assoc($result)) {
-    		echo "<div class='row white tg-remelis'>";
+    		echo "<div class='row tg-remelis'>";
 
 echo "<div class='carousel'>";
     echo "<a class='carousel-item' href='#one!'><img src='https://lorempixel.com/250/250/nature/1'></a>";
