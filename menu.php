@@ -39,12 +39,13 @@ mysqli_close($conn);
 
 <nav>
   <div class="nav-wrapper">
-    <a href="https://www.lotustravel.lt" class="brand-logo"><img class="brand-logo" src="images/logo2.jpg"> /a>
+    <a href="pagrindinis.php" class="brand-logo"><img class="brand-logo" src="images/logo2.jpg"> /a>
     <ul class="right hide-on-med-and-down">
       <li><a href="pagrindinis.php">Pagrindinis</a></li>
       <li><a href="apie.php">Apie mus</a></li>
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Šalys<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a href="https://www.lotustravel.lt">Pagalba</a></li>
     </ul>
   </div>
 </nav>
