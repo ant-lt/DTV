@@ -503,9 +503,14 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1);
 
 
+INSERT INTO Country (Name, Summary, Description, Foto)
+VALUES ('Kinija', 'Apibudinimas', 'aprastymas ', 'images/193154.jpg')
 
 
-
-
-
-
+CREATE TABLE Carusele_foto (
+	ID int NOT NULL AUTO_INCREMENT,
+	Foto varchar(100) CHARACTER SET utf8 ,
+	CountryID int,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (CountryID) REFERENCES Country(ID)
+);
