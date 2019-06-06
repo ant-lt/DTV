@@ -19,9 +19,10 @@
 		<button class="dk-page-title">SVEIKI ATVYKE ;)</button>
 	</a>
 	</div>
+	<?php include "footer.php"; ?>
 </div>
 	
-	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<?php include "footer.php"; ?>
+	
+	
 </body>
 </html>
