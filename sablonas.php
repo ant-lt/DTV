@@ -26,21 +26,28 @@
 	mysqli_set_charset($conn,"utf8");
 	// echo "Prisijungti pavyko!";
 
+	$salis = $_GET["salis"];
 
-	$sql = "SELECT id, Name, Description, Foto FROM Country";
+	$sql = "SELECT id, Name, Description, Foto FROM Country where Name='". $salis. "'";
+	
 	$result = mysqli_query($conn, $sql);
 
 	if (mysqli_num_rows($result) > 0) {
     // output data of each row
-		echo "<div>";
+		echo "<div class='container'>";
 		while($row = mysqli_fetch_assoc($result)) {
-    		echo "<div>";
-			//$nuotrauka = "https://picsum.photos/2000/1000";
-			//echo "<div ><img src=". $nuotrauka. "></div>";
-			echo "<div ><img src=". $row["Foto"]. "></div>";
-			echo "<h1>" . $row["Name"]. "</h1> ";
-			echo "<p>" . $row["Description"] . "</p> ";
-			echo "<p>" . $row["Foto"] . "</p> ";
+    		echo "<div class='row white tg-remelis'>";
+    			echo "<div class='col s12 l4 '>";
+
+				echo "<img class='responsive-img materialboxed tg-nuotrauka' src=". $row["Foto"]. ">";
+				echo "</div>";
+					echo "<div class='col s12 l8 '>";
+						echo "<h1 class='center-align'>" . $row["Name"]. "</h1> ";
+						//echo "<p>" . $row["Description"] . "</p> ";
+						echo $row["Description"];
+					echo "</div>";
+
+			// echo "<p>" . $row["Foto"] . "</p> ";
 			echo "</div>";
 
 		// komentarai 
