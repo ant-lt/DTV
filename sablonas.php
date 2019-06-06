@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Šablonas</title>
+	<title>Find The World</title>
 	<?php include "functions.php"; ?>
 	
 </head>
