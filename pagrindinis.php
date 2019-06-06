@@ -3,10 +3,11 @@
 <head>
 	<title>Pagrindinis</title>
 	<?php include "functions.php"; ?>
+	<?php include "header.php"; ?>
 </head>
 <body>
 
-<?php include "header.php"; ?>
+
 
 	
 
