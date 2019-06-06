@@ -51,11 +51,11 @@ echo "<div class='carousel'>";
 
 
 
-    			echo "<div class='col s12 l4 '>";
+    			// echo "<div class='col s12 l12 '>";
 
-				echo "<img class='responsive-img materialboxed tg-nuotrauka' src=". $row["Foto"]. ">";
-				echo "</div>";
-					echo "<div class='col s12 l8 '>";
+				// echo "<img class='responsive-img materialboxed tg-nuotrauka' src=". $row["Foto"]. ">";
+				// echo "</div>";
+					echo "<div class='col s12 l12 '>";
 						echo "<h1 class='center-align'>" . $row["Name"]. "</h1> ";
 						//echo "<p>" . $row["Description"] . "</p> ";
 						echo $row["Description"];

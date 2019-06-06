@@ -36,13 +36,13 @@
     // output data of each row
 			while($row = mysqli_fetch_assoc($result)) {
 				echo "<div class='row white tg-remelis'>";
-				echo "<div class='col s12 l4 ''>";
+				echo "<div class='col s12 l4 image-div'>";
 				echo "<img class='responsive-img materialboxed tg-nuotrauka' src=". $row["Foto"]. ">";
 				echo "</div>";
 				echo "<div class='col s12 l8 '>";
 				echo "<h3 class='center-align'>" . $row["Name"]. "</h3>";
 				echo "<p>" . $row["Summary"] . "</p> ";
-				echo "<a href=sablonas.php?salis=". $row["Name"]. ">daugiau</a>";
+				echo "<a class='bottom-right' href=sablonas.php?salis=". $row["Name"]. ">daugiau</a>";
 				echo "</div>";
 				echo "</div>";
 			}
