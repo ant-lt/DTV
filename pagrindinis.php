@@ -19,10 +19,10 @@
 		<button class="dk-page-title">SVEIKI ATVYKE ;)</button>
 	</a>
 	</div>
-	<?php include "footer.php"; ?>
+	
 </div>
 	
 	
-	
+	<?php include "footer.php"; ?>
 </body>
 </html>
