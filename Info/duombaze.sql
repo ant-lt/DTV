@@ -514,3 +514,9 @@ CREATE TABLE Carusele_foto (
 	PRIMARY KEY (ID),
 	FOREIGN KEY (CountryID) REFERENCES Country(ID)
 );
+
+INSERT INTO `carusele_foto` (`ID`, `Foto`, `CountryID`) VALUES
+(1, 'images/INDI_0252.JPG', 1),
+(2, 'images/INDI_0281.JPG', 1),
+(3, 'images/INDI_0451.JPG', 1);
+
