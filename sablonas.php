@@ -37,13 +37,20 @@
 		$ip = $_SERVER['HTTP_CLIENT_IP']?$_SERVER['HTTP_CLIENT_IP']:($_SERVER['HTTP_X_FORWARDED_FOR']?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
 
 
+		$sql_com_sal = "SELECT id FROM Country where Name='". $salis. "'";
+		$result_com_sal = mysqli_query($conn, $sql_com_sal);
+		$row_com_sal = mysqli_fetch_assoc($result_com_sal);
+		$com_countryID =  $row_com_sal["id"];
+
+
+
 		$sql_com_add = "INSERT INTO Comment (UserName, Email, User_IP, FreeText, CountryID)
-		VALUES ('$vardas', '$elpastas', '$ip', '$komentaru_txt', 1)";
+		VALUES ('$vardas', '$elpastas', '$ip', '$komentaru_txt', $com_countryID)";
 
 		if (mysqli_query($conn, $sql_com_add)) {
 		//	echo "New record created successfully";
-			header('Location: bendras.php');
-		//	header('Location: sablonas.php?salis='.$salis);
+		//	header('Location: bendras.php');
+		header('Location: sablonas.php?salis='.$salis);
 		} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
@@ -107,6 +114,11 @@
         	echo "  <label for='comment_txt'>Komentarai</label>";
         	echo "</div>";
       		echo "</div>";
+
+      		echo "<div class='input-field col s12 hide'>";
+        	echo "  <input type='text' name='salis' value='$salis'>";
+        	echo "</div>";
+    
 
 			echo "<button class='btn waves-effect waves-light' type='submit' name='pateikti_kom'>Pateikti";
     		echo "<i class='material-icons right'>send</i>";
