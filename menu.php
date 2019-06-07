@@ -57,8 +57,13 @@ mysqli_close($conn);
 ?>
 <!-- pabaiga šalių meniu užkrovimas iš DB -->
 
+<div class="dk_background">
+  <div class="dk_background2">
 
-<nav>
+  </div>
+</div>
+
+<nav class="navigacija">
   <div class="nav-wrapper">
     <a href="pagrindinis.php" class="brand-logo"><img class="brand-logo" src="images/logo2.jpg"> </a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -78,11 +83,7 @@ mysqli_close($conn);
   <li><a class="dropdown-trigger" href="#!" data-target="dropdownMobile">Šalys<i class="material-icons right">arrow_drop_down</i></a></li>
   <li><a href="https://www.lotustravel.lt">Pagalba</a></li>
 </ul>
-<div class="dk_background">
-  <div class="dk_background2">
 
-  </div>
-</div>
 
 
 
