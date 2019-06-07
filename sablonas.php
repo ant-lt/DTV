@@ -37,13 +37,20 @@
 		$ip = $_SERVER['HTTP_CLIENT_IP']?$_SERVER['HTTP_CLIENT_IP']:($_SERVER['HTTP_X_FORWARDED_FOR']?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
 
 
+		$sql_com_sal = "SELECT id FROM Country where Name='". $salis. "'";
+		$result_com_sal = mysqli_query($conn, $sql_com_sal);
+		$row_com_sal = mysqli_fetch_assoc($result_com_sal);
+		$com_countryID =  $row_com_sal["id"];
+
+
+
 		$sql_com_add = "INSERT INTO Comment (UserName, Email, User_IP, FreeText, CountryID)
-		VALUES ('$vardas', '$elpastas', '$ip', '$komentaru_txt', 1)";
+		VALUES ('$vardas', '$elpastas', '$ip', '$komentaru_txt', $com_countryID)";
 
 		if (mysqli_query($conn, $sql_com_add)) {
 		//	echo "New record created successfully";
-			header('Location: bendras.php');
-		//	header('Location: sablonas.php?salis='.$salis);
+		//	header('Location: bendras.php');
+		header('Location: sablonas.php?salis='.$salis);
 		} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
@@ -60,6 +67,7 @@
 		echo "<div class='container'>";
 		
 
+		
 
 		while($row = mysqli_fetch_assoc($result)) {
 			echo "<div class='row tg-remelis'>";
@@ -87,7 +95,7 @@
 
 // komentaru forma
 			echo "<div class='row'>";
-    		echo "<form class='col s12'>";
+    		echo "<form class='col s12 green accent-1'>";
 
       		echo "<div class='row'>";
         	echo "<div class='input-field col s6'>";
@@ -108,6 +116,11 @@
         	echo "</div>";
       		echo "</div>";
 
+      		echo "<div class='input-field col s12 hide'>";
+        	echo "  <input type='text' name='salis' value='$salis'>";
+        	echo "</div>";
+    
+
 			echo "<button class='btn waves-effect waves-light' type='submit' name='pateikti_kom'>Pateikti";
     		echo "<i class='material-icons right'>send</i>";
   			echo "</button>";
@@ -121,18 +134,42 @@
 			if (mysqli_num_rows($result2) > 0) {
     			// output data of each row
 				echo "<div>";
-				echo "<h1>Komentarai</h1> ";
-				while($row = mysqli_fetch_assoc($result2)) {
-					echo "<div>";
-					echo "<p>" . $row["Comment_dt"] . "</p> ";
-					echo "<p>" . $row["UserName"]. "</p> ";
-					echo "<p>" . $row["Email"] . "</p> ";
-					echo "<p>" . $row["User_IP"] . "</p> ";
-					echo "<p>" . $row["FreeText"] . "</p> ";
-					echo "</div>";
+				echo "<h4>Komentarai</h4> ";
 
+				echo "<table class='responsive-table'>";
+            	echo "<thead>";
+               	echo "<tr>";
+                    echo "<th>Komentaro data</th>";
+                    echo "<th>Vartotojo vardas</th>";
+                    echo "<th>El. paštas</th>";
+                    echo "<th>IP adresas</th>";
+                    echo "<th>Komentarai</th>";
+                echo "</tr>";
+              echo "</thead>";
+              echo "<tbody>";
+ 
+				while($row = mysqli_fetch_assoc($result2)) {
+					//echo "<div>";
+
+				//	echo "<p>" . $row["Comment_dt"] . "</p> ";
+				//	echo "<p>" . $row["UserName"]. "</p> ";
+				//	echo "<p>" . $row["Email"] . "</p> ";
+				//	echo "<p>" . $row["User_IP"] . "</p> ";
+				//	echo "<p>" . $row["FreeText"] . "</p> ";
+				//	echo "</div>";
+                echo "<tr>";
+                echo "<td>" . $row["Comment_dt"] . "</td>";
+                echo "<td>" . $row["UserName"]. "</td>";
+                echo "<td>" . $row["Email"] . "</td>";
+                echo "<td>" . $row["User_IP"] . "</td>";
+                echo "<td>" . $row["FreeText"] . "</td>";
+                echo "</tr>";
 				}
-				echo "</div>";
+				// echo "</div>";
+          		echo "</tbody>";
+            	echo "</table>";
+
+
 			}
 
 
@@ -149,5 +186,6 @@
 
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<?php include "footer.php"; ?>
+	<button onclick="topFunction()" id="scrollTop" title="Go to top">Top</button>
 </body>
 </html>

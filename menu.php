@@ -79,7 +79,6 @@ mysqli_close($conn);
 <ul class="sidenav" id="mobile-demo">
   <li><a href="pagrindinis.php">Pagrindinis</a></li>
   <li><a href="apie.php">Apie mus</a></li>
-  <li><a href="collapsible.html">Javascript</a></li>
   <li><a class="dropdown-trigger" href="#!" data-target="dropdownMobile">Šalys<i class="material-icons right">arrow_drop_down</i></a></li>
   <li><a href="https://www.lotustravel.lt">Pagalba</a></li>
 </ul>
