@@ -133,7 +133,7 @@
 			if (mysqli_num_rows($result2) > 0) {
     			// output data of each row
 				echo "<div>";
-				echo "<h1>Komentarai</h1> ";
+				echo "<h4>Komentarai</h4> ";
 
 				echo "<table class='responsive-table'>";
             	echo "<thead>";
