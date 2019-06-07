@@ -1,5 +1,9 @@
 CREATE DATABASE DTV_DB;
 
+drop TABLE comment;
+drop TABLE carusele_foto;
+drop TABLE country;
+
 
 CREATE TABLE Country (
 	ID int NOT NULL AUTO_INCREMENT,
@@ -10,6 +14,25 @@ CREATE TABLE Country (
 	PRIMARY KEY (ID)
 );
 
+CREATE TABLE Carusele_foto (
+	ID int NOT NULL AUTO_INCREMENT,
+	Foto varchar(100) CHARACTER SET utf8 ,
+	CountryID int,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (CountryID) REFERENCES Country(ID)
+);
+
+CREATE TABLE Comment (
+	ID int NOT NULL AUTO_INCREMENT,
+	Comment_dt DATETIME NOT NULL DEFAULT LOCALTIME(),
+	UserName varchar(50) CHARACTER SET utf8 NOT NULL,
+	Email varchar(100) CHARACTER SET utf8 ,
+	User_IP varchar(100) NOT NULL,
+	FreeText Text CHARACTER SET utf8 NOT NULL,
+	CountryID int,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (CountryID) REFERENCES Country(ID)
+);
 
 
 
@@ -151,7 +174,7 @@ Dokumentai, reikalingi vizai gauti:<br />
 - kelionių organizatoriaus patvirtintą kelionės rezervaciją.</span></p>
 
 <p class="c7 c8">&nbsp;</p>
-', 'images/DSC_0252.JPG');
+', 'images/INDI_0252.JPG');
 
 INSERT INTO Country (Name, Summary, Description, Foto)
 VALUES ('Tailandas', 
@@ -480,49 +503,84 @@ Taksofono korteles galima įsigyti visur.&nbsp;Jos kainuoja&nbsp;300 ir 500 bat�
 Registracija oro uoste prasideda likus&nbsp;2 val. iki skrydžio pradžios.&nbsp;</p>
 
 <p>&nbsp;</p>
-', 'images/DSC_0168.JPG');
+', 'images/THAI_0211.JPG');
 
-CREATE TABLE Comment (
-	ID int NOT NULL AUTO_INCREMENT,
-	Comment_dt DATETIME NOT NULL DEFAULT LOCALTIME(),
-	UserName varchar(50) CHARACTER SET utf8 NOT NULL,
-	Email varchar(100) CHARACTER SET utf8 ,
-	User_IP varchar(100) NOT NULL,
-	FreeText Text CHARACTER SET utf8 NOT NULL,
-	CountryID int,
-	PRIMARY KEY (ID),
-	FOREIGN KEY (CountryID) REFERENCES Country(ID)
-);
-
-INSERT INTO Comment (UserName, Email, User_IP, FreeText, CountryID)
-VALUES ('Vitas', 'v.gruzdas74@gmail.com', '192.168.1.134', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1);
 
 
 INSERT INTO Country (Name, Summary, Description, Foto)
-VALUES ('Kinija', 'Apibudinimas', 'aprastymas ', 'images/193154.jpg')
+VALUES ('Butanas', 'Valstybė pietų Azijoje, Himalajuose. Ribojasi su Indija ir Kinija. Butaną nuo Nepalo vakaruose skiria Sikimo valstija Indijoje, nuo Bangladešo − Vakarų Bengalija. Butaniečiai savo šalį vadina Druk Yul (bot. འབྲུག་ཡུལ་), kas reiškia „Griaustinio drakono žemė“.', 
+	'
+	<p><strong>Butano Karalystė</strong>&nbsp;(<strong>Butanas</strong>)</p>
 
+<p>Valstybė pietų&nbsp;Azijoje,&nbsp;Himalajuose. Ribojasi su&nbsp;Indija&nbsp;ir&nbsp;Kinija. Butaną nuo&nbsp;Nepalo&nbsp;vakaruose skiria&nbsp;Sikimo valstija&nbsp;Indijoje, nuo&nbsp;Banglade&scaron;o&nbsp;&minus;&nbsp;Vakarų Bengalija. Butaniečiai savo &scaron;alį vadina&nbsp;<em>Druk Yul</em>&nbsp;(<a href="https://lt.wikipedia.org/wiki/Botij%C5%B3_kalba" title="Botijų kalba">bot.</a>&nbsp;འབྲུག་ཡུལ་), kas rei&scaron;kia &bdquo;Griaustinio drakono žemė&ldquo;.<a href="https://lt.wikipedia.org/wiki/Butanas#cite_note-loc-1"><sup>[1]</sup></a></p>
 
-CREATE TABLE Carusele_foto (
-	ID int NOT NULL AUTO_INCREMENT,
-	Foto varchar(100) CHARACTER SET utf8 ,
-	CountryID int,
-	PRIMARY KEY (ID),
-	FOREIGN KEY (CountryID) REFERENCES Country(ID)
-);
+<p>Butanas ilgą laiką buvo viena labiausiai izoliuotų pasaulio valstybių, tačiau naujovės, tokios kaip tiesioginiai tarptautiniai skrydžiai,&nbsp;<a href="https://lt.wikipedia.org/wiki/Internetas" title="Internetas">internetas</a>,&nbsp;<a href="https://lt.wikipedia.org/wiki/Mobilusis_ry%C5%A1ys" title="Mobilusis ryšys">mobilusis ry&scaron;ys</a>&nbsp;ir kabelinė televizija, ženkliai modernizavo &scaron;alies miestus. Butane tokią modernizaciją bandoma suderinti su senovinės kultūra ir tradicijomis, taikant&nbsp;<a href="https://lt.wikipedia.org/w/index.php?title=Bendroji_nacionalin%C4%97_laim%C4%97&amp;action=edit&amp;redlink=1" title="Bendroji nacionalinė laimė (puslapis neegzistuoja)">bendrosios nacionalinės laimės</a>&nbsp;(BNL) filosofiją. &Scaron;alyje i&scaron;vengta gamtos niokojimo. Vyriausybė imasi veiksmingų priemonių kultūros,&nbsp;<a href="https://lt.wikipedia.org/w/index.php?title=Kult%C5%ABrin%C4%97_tapatyb%C4%97&amp;action=edit&amp;redlink=1" title="Kultūrinė tapatybė (puslapis neegzistuoja)">tapatumo</a>&nbsp;ir aplinkos i&scaron;saugojimui. 2006&nbsp;m. žurnalas &bdquo;<a href="https://lt.wikipedia.org/w/index.php?title=Business_week&amp;action=edit&amp;redlink=1" title="Business week (puslapis neegzistuoja)">Business week</a>&ldquo;, remdamasis tais pačiais metais&nbsp;<a href="https://lt.wikipedia.org/w/index.php?title=Lesterio_universitetas&amp;action=edit&amp;redlink=1" title="Lesterio universitetas (puslapis neegzistuoja)">Lesterio universiteto</a>&nbsp;atlikto tyrimo &bdquo;Pasaulinis laimės žemėlapis&ldquo; duomenimis, Butaną įvertino kaip laimingiausią &scaron;alį Azijoje ir a&scaron;tuntą laimingiausią pasaulyje.<a href="https://lt.wikipedia.org/wiki/Butanas#cite_note-2"><sup>[2]</sup></a></p>
 
-INSERT INTO `carusele_foto` (`ID`, `Foto`, `CountryID`) VALUES
-(1, 'images/INDI_0252.JPG', 1),
-(2, 'images/INDI_0281.JPG', 1),
-(3, 'images/INDI_0451.JPG', 1);
+<p>Butano kra&scaron;tovaizdis įvairauja nuo subtropinių lygumų pietuose iki &scaron;altų zonų&nbsp;<a href="https://lt.wikipedia.org/wiki/Himalajai" title="Himalajai">Himalajų</a>&nbsp;auk&scaron;tikalnėse, kurių kai kurios vir&scaron;ija 7 000 metrų auk&scaron;tį.&nbsp;<a href="https://lt.wikipedia.org/w/index.php?title=Valstybin%C4%97_religija&amp;action=edit&amp;redlink=1" title="Valstybinė religija (puslapis neegzistuoja)">Valstybinė</a>&nbsp;&scaron;alies religija yra&nbsp;<a href="https://lt.wikipedia.org/wiki/Vad%C5%BErajana_budizmas" title="Vadžrajana budizmas">Vadžrajana budizmas</a>. Budizmą i&scaron;pažįsta 691 141 gyventojas, tuo tarpu&nbsp;<a href="https://lt.wikipedia.org/wiki/Induizmas" title="Induizmas">induizmas</a>&nbsp;čia yra antra pagal tikinčiųjų skaičių religija. Po &scaron;imtmečius trukusio monarchinio valdymo 2008&nbsp;m. kovą Butane įvyko pirmieji demokratiniai rinkimai. Valstybė yra 45 tarptautinių organizacijų<a href="https://lt.wikipedia.org/wiki/Butanas#cite_note-3"><sup>[3]</sup></a>, tarp jų&nbsp;<a href="https://lt.wikipedia.org/wiki/Jungtin%C4%97s_Tautos" title="Jungtinės Tautos">JT</a>&nbsp;ir&nbsp;<a href="https://lt.wikipedia.org/wiki/Piet%C5%B3_Azijos_regioninio_bendradarbiavimo_asociacija" title="Pietų Azijos regioninio bendradarbiavimo asociacija">Pietų Azijos regioninio bendradarbiavimo asociacijos</a>, narė.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Pavadinimas</strong></p>
+
+<p>Žodis &bdquo;Butanas&ldquo; gali būti kilęs i&scaron; sanksrito žodžio <em>Bhu-Utthan</em> (auk&scaron;tumos). Pasak kitos sanskritizacijos teorijos, <em>Bhoṭa-anta</em> rei&scaron;kia &bdquo;Tibeto gale&ldquo;, o Butanas įsikūręs į pietus nuo Tibeto.</p>
+
+<p>Seniau Butanas buvo žinomas įvairiais pavadinimais: <em>Lho Mon</em> (tamsos pietų žemė), <em>Lho Tsendenjong</em> (<em>Tsenden</em> kiparisų žemė), <em>Lhomen Khazhi</em> (keturių kelių pietinė žemė) ir <em>Lho Men Jong</em> (vaistinių augalų pietų žemė).<a href="https://lt.wikipedia.org/wiki/Butanas#cite_note-loc-1"><sup>[1]</sup></a></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Istorija</strong></p>
+
+<p style="margin-left:36.0pt;"><em>Pagrindinis straipsnis &ndash; Butano istorija.</em></p>
+
+<p>Akmeniniai įnagiai, ginklai, dramblių griaučiai ir didelių akmeninių struktūrų atskalos parodo, kad Butanas buvo apgyvendintas dar 2000 m. pr. m. e., nors apie tai nėra jokių i&scaron;likusių įra&scaron;ų. Butano istorija artimai susijusi su gretimų Indijos valstijų Sikimo ir Arunačial Prade&scaron;o istorija. Butanas nuo seno buvo Tibeto civilizacijos ir valstybės periferija. Tibetieti&scaron;ki teritorijos pavadinimai <em>Lhomon Tsendenjong</em>, <em>Lhomon Khashi</em> arba Pietų Mon (keturių kelių žemė) yra minimi senovinėse Tibeto ir Butano kronikose.<sup>[1</sup></p>
+
+<p>Istorikai yra i&scaron;kėlę teoriją, kad gentinė valstybė <em>Lhomon</em> (pažodžiui &bdquo;pietų tamsybė&ldquo;) arba <em>Monyul</em> (&bdquo;tamsos žemė&ldquo;, reik&scaron;mė turi ry&scaron;į su monpais, Butano čiabuviais) veikiausiai egzistavo 500 m. pr. m. e.-600 m. rytiniame Butane. Ją VII a. užkariavus Tibeto imperijai, Butano kalnų slėniuose egzistavo daug smulkių valstybinių junginių, valdomų kunigaik&scaron;čių, tituluojamų <em>deb</em>. Tuo metu Butano teritorijoje plito ankstyvasis Mahajanos budizmas, kurį vėliau pakeitė Vadžrajana (jos propaguotojas Tibete Padmasambhava lankėsi Butano teritorijoje ir įstaigė keletą vienuolynų).</p>
+
+<p>Nėra tiksliai žinoma, kokia tauta tuo metu buvo apgyvendinusi tuometinį Butaną, bet i&scaron; &scaron;iaurės plūstant Tibeto kultūrai, pamažėle kėlėsi ir tibetiečiai (bhotijai), pamažu suformavę dabartinę dzongkha kalba kalbančią tautą.</p>
+
+<p>Punakos, senosios Butano sostinės, tvirtovė Trongsos tvirtovė</p>
+
+<p>Butano, kaip vieningos valstybės, istorija prasideda XVII a, kuomet Tibeto Drukpa Kagyu sektos vadovas Ngavangas Namgijalas, persekiojamas savo &scaron;alyje, pabėgo į Butaną ir čia sukūrė vientisą valstybę, kurioje atidalintos religinė ir pasaulietinė vadžios. Butano sostine tapo Punaka, pradėtos statyti tibetieti&scaron;ko stiliaus pilys-&scaron;ventyklos dzongai, įvestas rūbų, elgesio reglamentas (driglam namža), i&scaron;likęs iki dabar. Ngavangas Namgijalas įkūrė dvasinių lyderių &scaron;abdrungų dinastiją, kurių valdžia, kaip ir dalai lamų buvo paveldima remiantis reinkarnacijos sąvoka, per tulku (&bdquo;atgimėlių&ldquo;) instituciją. &Scaron;abdrungų teokratija Butane i&scaron;silaikė iki XX a. pradžios.</p>
+
+<p>I&scaron; karto po įsikūrimo ir per XVIII a. Butanas susidūrė su Tibeto ambicijomis susigrąžinti &scaron;ias teritorijas į savo įtakos sferą. Nepaisant to, &scaron;alis atrėmė Tibeto antpuolius ir 1759&nbsp;m. pasira&scaron;ė su Tibetu paliaubas. Tuo pat metu Butanas plėtė savo interesus pietuose (duarų regione), okupavo nedidelę vietos valstybę Kuč Beharą. Tai sukėlė susidūrimą su tuo metu augančia Britų Indija, ir per XIX a. trintis tarp Britų imperijos ir Butano augo, kol prasiveržė kaip Duarų karas (1864&ndash;1865). Butanui jį pralaimėjus, &scaron;alis neteko pietinių teritorijų duaruose.</p>
+
+<p>Nusilpusią &scaron;alį XIX a. antroje pusėje siaubė vidaus neramumai, kurių nesugebėjo numal&scaron;inti silpna &scaron;abdrungų valdžia. Du gubernatoriai (Paro ir Trongsos) kovojo tarpusavyje, vienas remiamas Tibeto, o kitas&nbsp;&ndash; Britų imperijos. Galiausiai valdžią &scaron;alyje paėmė Tongsos gubernatorius Ugjenas Vangčukas, kuris 1907&nbsp;m. &scaron;alyje įvykdė dideles reformas: jų metu panaikinta &scaron;abdrungų teokratija, įkurta monarchija, reformuota administracija, o &scaron;alies užsienio politika atiduota reguliuoti Britų imperijai. Pirmuoju Butano karaliumi tapo Vangčukas, įkurdamas Vangčukų dinastiją, kuri valdo iki dabar.</p>
+
+<p>1947&nbsp;m. Indija tapus nepriklausoma, 1949&nbsp;m. Butanas perra&scaron;ė sutartį su &scaron;ia valstybe, palikdamas jai teises administruoti savo užsienio politiką. Nepaisant to, Butanas i&scaron;saugojo nepriklausomybę ir tolimesnių karalių valdymo laikais modernizavosi. Tačiau &scaron;alyje stiprėjo ir etninės problemos, kadangi prakti&scaron;kai nekontroliuojant migracijos, pietinėse teritorijose gausėjo daugiausia Nepalo kilmės ekonominių migrantų, vadinamų lhotsampais.</p>
+
+<p>Po 1970&nbsp;m. &scaron;i problema ypač i&scaron;ry&scaron;kėjo, kuomet gretimame Sikime lhotsampų dauguma nubalsavo karalystės prijungimą prie Indijos. Butane buvo suprasta, kad lhotsampų skaičius artėja prie pagrindinės valstybės etninės grupės (ngalopų) skaičiaus, ir tai sukėlė abipusius susidūrimus tarp etninių grupių, o galiausiai ir pabėgėlių problemą. Apie 100 tūkst. lhotsampų buvo i&scaron;varyti i&scaron; &scaron;alies, o Butanas buvo priverstas labai stipriai apriboti imigraciją. Taip pat sustiprinta &scaron;alies tapatybės stiprinimo politika, tapo privalomas tradicinis aprangos kodas driglam namža, valstybinės kalbos dzongkha mokėjimas ir pan. Butanas tapo viena uždariausių pasaulio valstybių, ribojančia turistų srautus, draudžianti televiziją, internetą.</p>
+
+<p>1999&nbsp;m. &scaron;alyje prasidėjo reformų ir modernizacijos laikotarpis, kuris tęsiasi iki dabar. Panaikinti draudimai, apribota karaliaus valdžia, 2005&nbsp;m. priimta nauja konstitucija, o 2007&nbsp;m. įvyko pirmieji demokratiniai parlamento rinkimai. 2008&nbsp;m. karaliui Džigme Singje Vangčukui atsisakius sosto, naujuoju valdovu tapo jaunas Džigme Khesaras Namgjelis Vangčukas.</p>
+
+<h3>Miestai</h3>
+
+<ul>
+	<li>Džakaras, Bumtango rajono administracinis centras.</li>
+	<li>Mongaras, komercinis centras &scaron;alies rytuose.</li>
+	<li>Paras, kuriame įskūręs tarptautinis oro uostas.</li>
+	<li>Punčolingas, Butano komercinis centras.</li>
+	<li>Punaka, senoji sostinė.</li>
+	<li>Samdrup Džongkharas</li>
+	<li>Timpu, Butano didžiausias miestas ir sostinė.</li>
+	<li>Tra&scaron;igangas, tankiausiai apgyvendintas Butano rajonas</li>
+	<li>Trongsa, esantis &scaron;alies viduryje.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2>Kultūra</h2>
+
+<p>Butane valdžios iniciatyva yra imtasi sistemingų priemonių vykdyti bendrosios nacionalinės laimės politiką, t. y. i&scaron;laikyti ir puoselėti gyventojų laimę. &Scaron;alyje mažai reklamos, ribojama televizija (nerodomos imtynės, MTV), uždraustas tabakas ir plastikiniai mai&scaron;eliai, įstatymai nukreipti gamtosaugos linkme. Tokios priemonės yra efektyvios i&scaron; esmės dėl to, kad &scaron;alis yra geografi&scaron;kai izoliuota ir joje karalius turi daug galių.</p>
+'
+, 'images/butan1.jpg');
+
 
 
 
 INSERT INTO `carusele_foto` (`Foto`, `CountryID`) VALUES
+('images/INDI_0252.JPG', 1),
+('images/INDI_0281.JPG', 1),
+('images/INDI_0451.JPG', 1),
 ('images/INDI_0168.JPG', 1),
 ('images/INDI_0181.JPG',1),
 ('images/INDI_0240.JPG',1),
@@ -538,16 +596,24 @@ INSERT INTO `carusele_foto` (`Foto`, `CountryID`) VALUES
 ('images/THAI_0082.JPG', 2),
 ('images/THAI_0121.JPG', 2),
 ('images/THAI_0178.JPG', 2),
-('images/THAI_0190 (2).JPG', 2),
+('images/THAI_0190(2).JPG', 2),
 ('images/THAI_0211.JPG', 2),
 ('images/THAI_0317.JPG', 2),
 ('images/THAI_0334.JPG', 2),
 ('images/THAI_0336.JPG', 2),
-('images/THAI_0343 (2).JPG', 2),
+('images/THAI_0343(2).JPG', 2),
 ('images/THAI_0375.JPG', 2),
 ('images/THAI_0443.JPG', 2),
 ('images/THAI_0500.JPG', 2),
 ('images/THAI_0510.JPG', 2);
+
+INSERT INTO `carusele_foto` (`Foto`, `CountryID`) VALUES
+('images/butan1.jpg', 3),
+('images/butan2.jpg', 3),
+('images/butan3.jpg', 3),
+('images/butan4.jpg', 3),
+('images/butan5.jpg', 3);
+
 
 
 

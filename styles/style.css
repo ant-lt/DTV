@@ -57,6 +57,7 @@
 	border: 2px solid black;
 	background-color: rgba(255,255,255,0.63);
 	margin-left: 0px;
+	border-radius: 20%;
 
 	
 }
@@ -141,6 +142,12 @@
 .tg-rysku {
 	
 	font-style: italic;
+
+}
+.dk-parg{
+	font-style: italic;
+	font-size:20px;
+	color: black;
 
 }
 

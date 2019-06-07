@@ -21,7 +21,7 @@
 		<p class="tg-rysku tg-remelis2 tg-inlineblock"> Tai yra nuolat pildomas informacinis puslapis apie įvairias pasaulio šalis</p>
 	</div>
 		<div class="center-align dk-page-title">
-	<a class="waves-effect waves-light btn-large" href="bendras.php" >PRADĖTI KELIONĘ</a>
+	<a class="waves-effect waves-light btn-large #e57373 red lighten-2" href="bendras.php" >PRADĖTI KELIONĘ</a>
 	
 	</div>
 	

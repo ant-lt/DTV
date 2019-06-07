@@ -16,7 +16,9 @@
 			<div class="dk-box">
 				<h3>Donatas Kuprys</h3>
 				<img src="./images/dk-foto.jpg">
-				<p>The funny one :)</p>
+				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The funny one! Pomėgiai:
+				Kelionės, muzika ir naujai atrastas WEB programavimas :)</p>
+				<br>
 				<a href="https://www.facebook.com/donatas.kuprys.9?ref=bookmarks" target="_blank" class="fa fa-facebook"></a>
 				<a href="https://www.instagram.com/donatas06/" target="_blank"class="fa fa-instagram"></a>
 				<a href="https://www.linkedin.com/in/donatas-kuprys-8b7aa1158/" target="_blank" class="fa fa-linkedin"></a>
@@ -24,7 +26,8 @@
 			<div class="dk-box">
 				<h3>Tomas Grainys</h3>
 				<img src="https://picsum.photos/150">
-				<p>The smart one :)</p>
+				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The smart one. :)</p>
+				<br>
 				<a href="#" class="fa fa-facebook"></a>
 				<a href="#" class="fa fa-instagram"></a>
 				<a href="#" class="fa fa-linkedin"></a>
@@ -32,7 +35,8 @@
 			<div class="dk-box">
 				<h3>Vitas Gruzdas</h3>
 				<img src="https://picsum.photos/150">
-				<p>The Backend GURU :)</p>
+				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The Backend GURU :)</p>
+				<br>
 				<a href="#" class="fa fa-facebook"></a>
 				<a href="#" class="fa fa-instagram"></a>
 				<a href="#" class="fa fa-linkedin"></a>
