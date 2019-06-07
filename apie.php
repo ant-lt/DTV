@@ -15,7 +15,7 @@
 		<div class="dk-boxes">
 			<div class="dk-box">
 				<h3>Donatas Kuprys</h3>
-				<img src="https://picsum.photos/150">
+				<img src="./images/dk-foto.jpg">
 				<p>The funny one :)</p>
 				<a href="https://www.facebook.com/donatas.kuprys.9?ref=bookmarks" class="fa fa-facebook"></a>
 				<a href="https://www.instagram.com/donatas06/" class="fa fa-instagram"></a>
