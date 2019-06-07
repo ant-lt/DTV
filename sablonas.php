@@ -94,7 +94,7 @@
 
 // komentaru forma
 			echo "<div class='row'>";
-    		echo "<form class='col s12'>";
+    		echo "<form class='col s12 green accent-1'>";
 
       		echo "<div class='row'>";
         	echo "<div class='input-field col s6'>";
@@ -134,17 +134,41 @@
     			// output data of each row
 				echo "<div>";
 				echo "<h1>Komentarai</h1> ";
-				while($row = mysqli_fetch_assoc($result2)) {
-					echo "<div>";
-					echo "<p>" . $row["Comment_dt"] . "</p> ";
-					echo "<p>" . $row["UserName"]. "</p> ";
-					echo "<p>" . $row["Email"] . "</p> ";
-					echo "<p>" . $row["User_IP"] . "</p> ";
-					echo "<p>" . $row["FreeText"] . "</p> ";
-					echo "</div>";
 
+				echo "<table class='responsive-table'>";
+            	echo "<thead>";
+               	echo "<tr>";
+                    echo "<th>Komentaro data</th>";
+                    echo "<th>Vartotojo vardas</th>";
+                    echo "<th>El. paštas</th>";
+                    echo "<th>IP adresas</th>";
+                    echo "<th>Komentarai</th>";
+                echo "</tr>";
+              echo "</thead>";
+              echo "<tbody>";
+ 
+				while($row = mysqli_fetch_assoc($result2)) {
+					//echo "<div>";
+
+				//	echo "<p>" . $row["Comment_dt"] . "</p> ";
+				//	echo "<p>" . $row["UserName"]. "</p> ";
+				//	echo "<p>" . $row["Email"] . "</p> ";
+				//	echo "<p>" . $row["User_IP"] . "</p> ";
+				//	echo "<p>" . $row["FreeText"] . "</p> ";
+				//	echo "</div>";
+                echo "<tr>";
+                echo "<td>" . $row["Comment_dt"] . "</td>";
+                echo "<td>" . $row["UserName"]. "</td>";
+                echo "<td>" . $row["Email"] . "</td>";
+                echo "<td>" . $row["User_IP"] . "</td>";
+                echo "<td>" . $row["FreeText"] . "</td>";
+                echo "</tr>";
 				}
-				echo "</div>";
+				// echo "</div>";
+          		echo "</tbody>";
+            	echo "</table>";
+
+
 			}
 
 
