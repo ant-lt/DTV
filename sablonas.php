@@ -64,6 +64,7 @@
 
 	if (mysqli_num_rows($result) > 0) {
     // output data of each row
+
 		echo "<div class='container'>";
 		
 
@@ -178,7 +179,9 @@
 
 
 		}
+		
 		echo "</div>";
+
 	} 
 
 	mysqli_close($conn);
@@ -186,6 +189,6 @@
 
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<?php include "footer.php"; ?>
-	<button onclick="topFunction()" id="scrollTop" title="Go to top">Top</button>
+	
 </body>
 </html>
