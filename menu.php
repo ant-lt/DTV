@@ -22,15 +22,36 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
+  $saliu_meniu = array();
+
+
+  
+  while($row = mysqli_fetch_assoc($result)) {
+    array_push($saliu_meniu, $row["Name"]);
+    // print_r($saliu_meniu);
+  }
+
+
+  
+
+  $meniulength = count($saliu_meniu);
 
   echo "<ul id='dropdown1' class='dropdown-content'>";
 
-  while($row = mysqli_fetch_assoc($result)) {
-    echo "<li><a href=sablonas.php?salis=". $row["Name"]. ">". $row["Name"]. "</a></li>";
-  }
-  echo "</ul>";
+  for($x = 0; $x < $meniulength; $x++) {
+   echo "<li><a href=sablonas.php?salis=". $saliu_meniu[$x]. ">". $saliu_meniu[$x]. "</a></li>";
+ }
+ echo "</ul>";
+
+ echo "<ul id='dropdownMobile' class='dropdown-content'>";
+ for($x = 0; $x < $meniulength; $x++) {
+   echo "<li><a href=sablonas.php?salis=". $saliu_meniu[$x]. ">". $saliu_meniu[$x]. "</a></li>";
+ }
+ echo "</ul>";
 
 } 
+
+
 
 mysqli_close($conn);
 ?>
@@ -51,11 +72,12 @@ mysqli_close($conn);
   </div>
 </nav>
 <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-  </ul>
+  <li><a href="pagrindinis.php">Pagrindinis</a></li>
+  <li><a href="apie.php">Apie mus</a></li>
+  <li><a href="collapsible.html">Javascript</a></li>
+  <li><a class="dropdown-trigger" href="#!" data-target="dropdownMobile">Šalys<i class="material-icons right">arrow_drop_down</i></a></li>
+  <li><a href="https://www.lotustravel.lt">Pagalba</a></li>
+</ul>
 <div class="dk_background">
   <div class="dk_background2">
 

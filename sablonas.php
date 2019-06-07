@@ -39,33 +39,26 @@
 
 
 		while($row = mysqli_fetch_assoc($result)) {
-    		echo "<div class='row tg-remelis'>";
+			echo "<div class='row tg-remelis'>";
 
-	$sql_car = "SELECT carusele_foto.Foto FROM carusele_foto INNER JOIN Country ON carusele_foto.CountryID = Country.ID where Country.Name='". $salis. "'";
-	$result_car = mysqli_query($conn, $sql_car);
-	echo "<div class='carousel'>";
-	while($row_car = mysqli_fetch_assoc($result_car)) {
-
-	
-     echo "<a class='carousel-item' href='#". $row_car["Foto"]. "!'><img src=". $row_car["Foto"]."></a>";
-    // echo "<a class='carousel-item' href='#two!'><img src='https://lorempixel.com/250/250/nature/2'></a>";
-    //echo "<a class='carousel-item' href='#three!'><img src='https://lorempixel.com/250/250/nature/3'></a>";
-    // echo "<a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>";
-    // echo "<a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>";
- 	 
-}
-echo "</div>";
+			$sql_car = "SELECT carusele_foto.Foto FROM carusele_foto INNER JOIN Country ON carusele_foto.CountryID = Country.ID where Country.Name='". $salis. "'";
+			$result_car = mysqli_query($conn, $sql_car);
+			echo "<div class='carousel'>";
+			while($row_car = mysqli_fetch_assoc($result_car)) {
+				echo "<a class='carousel-item' href='#". $row_car["Foto"]. "!'><img src=". $row_car["Foto"]."></a>";
+			}
+			echo "</div>";
 
 
     			// echo "<div class='col s12 l12 '>";
 
 				// echo "<img class='responsive-img materialboxed tg-nuotrauka' src=". $row["Foto"]. ">";
 				// echo "</div>";
-					echo "<div class='col s12 l12 '>";
-						echo "<h1 class='center-align'>" . $row["Name"]. "</h1> ";
+			echo "<div class='col s12 l12 '>";
+			echo "<h1 class='center-align'>" . $row["Name"]. "</h1> ";
 						//echo "<p>" . $row["Description"] . "</p> ";
-						echo $row["Description"];
-					echo "</div>";
+			echo $row["Description"];
+			echo "</div>";
 
 			// echo "<p>" . $row["Foto"] . "</p> ";
 			echo "</div>";
@@ -75,18 +68,18 @@ echo "</div>";
 			$result2 = mysqli_query($conn, $sql2);
 			if (mysqli_num_rows($result2) > 0) {
     			// output data of each row
+				echo "<div>";
+				echo "<h1>Komentarai</h1> ";
+				while($row = mysqli_fetch_assoc($result2)) {
 					echo "<div>";
-					echo "<h1>Komentarai</h1> ";
-					while($row = mysqli_fetch_assoc($result2)) {
-    					echo "<div>";
-    					echo "<p>" . $row["Comment_dt"] . "</p> ";
-						echo "<p>" . $row["UserName"]. "</p> ";
-						echo "<p>" . $row["Email"] . "</p> ";
-						echo "<p>" . $row["User_IP"] . "</p> ";
-						echo "<p>" . $row["FreeText"] . "</p> ";
-						echo "</div>";
+					echo "<p>" . $row["Comment_dt"] . "</p> ";
+					echo "<p>" . $row["UserName"]. "</p> ";
+					echo "<p>" . $row["Email"] . "</p> ";
+					echo "<p>" . $row["User_IP"] . "</p> ";
+					echo "<p>" . $row["FreeText"] . "</p> ";
+					echo "</div>";
 
-					}
+				}
 				echo "</div>";
 			}
 		}
@@ -96,7 +89,7 @@ echo "</div>";
 	mysqli_close($conn);
 	?>
 
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<?php include "footer.php"; ?>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<?php include "footer.php"; ?>
 </body>
 </html>
