@@ -28,6 +28,29 @@
 
 	$salis = $_GET["salis"];
 
+	if (isset($_GET["pateikti_kom"]) 
+		&& $_GET["elpastas"] !=""){
+
+		$vardas = $_GET["vardas"];
+		$elpastas = $_GET["elpastas"];
+		$komentaru_txt = $_GET["komentaru_txt"];
+		$ip = $_SERVER['HTTP_CLIENT_IP']?$_SERVER['HTTP_CLIENT_IP']:($_SERVER['HTTP_X_FORWARDED_FOR']?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
+
+
+		$sql_com_add = "INSERT INTO Comment (UserName, Email, User_IP, FreeText, CountryID)
+		VALUES ('$vardas', '$elpastas', '$ip', '$komentaru_txt', 1)";
+
+		if (mysqli_query($conn, $sql_com_add)) {
+		//	echo "New record created successfully";
+			header('Location: bendras.php');
+		//	header('Location: sablonas.php?salis='.$salis);
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+
+	}
+
+
 	$sql = "SELECT id, Name, Description, Foto FROM Country where Name='". $salis. "'";
 	
 	$result = mysqli_query($conn, $sql);
@@ -39,56 +62,84 @@
 
 
 		while($row = mysqli_fetch_assoc($result)) {
-    		echo "<div class='row tg-remelis'>";
+			echo "<div class='row tg-remelis'>";
 
-	$sql_car = "SELECT carusele_foto.Foto FROM carusele_foto INNER JOIN Country ON carusele_foto.CountryID = Country.ID where Country.Name='". $salis. "'";
-	$result_car = mysqli_query($conn, $sql_car);
-	echo "<div class='carousel'>";
-	while($row_car = mysqli_fetch_assoc($result_car)) {
-
-	
-     echo "<a class='carousel-item' href='#". $row_car["Foto"]. "!'><img src=". $row_car["Foto"]."></a>";
-    // echo "<a class='carousel-item' href='#two!'><img src='https://lorempixel.com/250/250/nature/2'></a>";
-    //echo "<a class='carousel-item' href='#three!'><img src='https://lorempixel.com/250/250/nature/3'></a>";
-    // echo "<a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>";
-    // echo "<a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>";
- 	 
-}
-echo "</div>";
+			$sql_car = "SELECT carusele_foto.Foto FROM carusele_foto INNER JOIN Country ON carusele_foto.CountryID = Country.ID where Country.Name='". $salis. "'";
+			$result_car = mysqli_query($conn, $sql_car);
+			echo "<div class='carousel'>";
+			while($row_car = mysqli_fetch_assoc($result_car)) {
+				echo "<a class='carousel-item' href='#". $row_car["Foto"]. "!'><img src=". $row_car["Foto"]."></a>";
+			}
+			echo "</div>";
 
 
     			// echo "<div class='col s12 l12 '>";
 
 				// echo "<img class='responsive-img materialboxed tg-nuotrauka' src=". $row["Foto"]. ">";
 				// echo "</div>";
-					echo "<div class='col s12 l12 '>";
-						echo "<h1 class='center-align'>" . $row["Name"]. "</h1> ";
+			echo "<div class='col s12 l12 '>";
+			echo "<h1 class='center-align'>" . $row["Name"]. "</h1> ";
 						//echo "<p>" . $row["Description"] . "</p> ";
-						echo $row["Description"];
-					echo "</div>";
-
-			// echo "<p>" . $row["Foto"] . "</p> ";
+			echo $row["Description"];
 			echo "</div>";
 
-		// komentarai 
+			// echo "<p>" . $row["Foto"] . "</p> ";
+
+// komentaru forma
+			echo "<div class='row'>";
+    		echo "<form class='col s12'>";
+
+      		echo "<div class='row'>";
+        	echo "<div class='input-field col s6'>";
+         	echo " <input id='c_name' type='text' class='validate' name='vardas'>";
+         	echo " <label for='c_name'>Jūsų vardas</label>";
+        	echo "</div>";
+
+       		echo "<div class='row'>";
+       		echo " <div class='input-field col s6'>";
+       		echo "   <input id='email' type='email' class='validate' name='elpastas'>";
+       		echo "   <label for='email'>Email</label>";
+       		echo " </div>";
+      		echo "</div>";
+   	
+        	echo "<div class='input-field col s12'>";
+        	echo "  <input id='comment_txt' type='text' class='validate' name='komentaru_txt'>";
+        	echo "  <label for='comment_txt'>Komentarai</label>";
+        	echo "</div>";
+      		echo "</div>";
+
+			echo "<button class='btn waves-effect waves-light' type='submit' name='pateikti_kom'>Pateikti";
+    		echo "<i class='material-icons right'>send</i>";
+  			echo "</button>";
+
+        	echo "</form>";
+    		echo "</div>";
+
+		// komentaru atvaizdavimas
 			$sql2 = "SELECT Comment_dt, UserName, Email, User_IP, FreeText FROM Comment INNER JOIN Country ON Comment.CountryID = Country.ID where Comment.CountryID=" . $row["id"];
 			$result2 = mysqli_query($conn, $sql2);
 			if (mysqli_num_rows($result2) > 0) {
     			// output data of each row
+				echo "<div>";
+				echo "<h1>Komentarai</h1> ";
+				while($row = mysqli_fetch_assoc($result2)) {
 					echo "<div>";
-					echo "<h1>Komentarai</h1> ";
-					while($row = mysqli_fetch_assoc($result2)) {
-    					echo "<div>";
-    					echo "<p>" . $row["Comment_dt"] . "</p> ";
-						echo "<p>" . $row["UserName"]. "</p> ";
-						echo "<p>" . $row["Email"] . "</p> ";
-						echo "<p>" . $row["User_IP"] . "</p> ";
-						echo "<p>" . $row["FreeText"] . "</p> ";
-						echo "</div>";
+					echo "<p>" . $row["Comment_dt"] . "</p> ";
+					echo "<p>" . $row["UserName"]. "</p> ";
+					echo "<p>" . $row["Email"] . "</p> ";
+					echo "<p>" . $row["User_IP"] . "</p> ";
+					echo "<p>" . $row["FreeText"] . "</p> ";
+					echo "</div>";
 
-					}
+				}
 				echo "</div>";
 			}
+
+
+
+			echo "</div>";
+
+
 		}
 		echo "</div>";
 	} 
@@ -96,7 +147,7 @@ echo "</div>";
 	mysqli_close($conn);
 	?>
 
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<?php include "footer.php"; ?>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<?php include "footer.php"; ?>
 </body>
 </html>

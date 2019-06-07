@@ -54,6 +54,60 @@
 	right: 0.75rem;
 	bottom: 0.75rem;
 }
+
 .reliatyvus {
 	position: relative;
 }
+
+
+.dk-conteiner{
+	position: relative;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.dk-boxes{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.dk-box{
+	width: 30%;
+	text-align: center;
+}
+.dk-box img{
+	border-radius: 50%;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}  
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.dk-conteiner h1, h3{
+	text-align: center;
+}
+

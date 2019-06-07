@@ -520,3 +520,34 @@ INSERT INTO `carusele_foto` (`ID`, `Foto`, `CountryID`) VALUES
 (2, 'images/INDI_0281.JPG', 1),
 (3, 'images/INDI_0451.JPG', 1);
 
+
+
+INSERT INTO `carusele_foto` (`Foto`, `CountryID`) VALUES
+('images/INDI_0168.JPG', 1),
+('images/INDI_0181.JPG',1),
+('images/INDI_0240.JPG',1),
+('images/INDI_0335.JPG',1),
+('images/INDI_0357.JPG',1),
+('images/INDI_0409.JPG',1),
+('images/INDI_2144.JPG',1),
+('images/INDI_2154.JPG',1);
+
+INSERT INTO `carusele_foto` (`Foto`, `CountryID`) VALUES
+('images/THAI_0040.JPG', 2),
+('images/THAI_0080.JPG', 2),
+('images/THAI_0082.JPG', 2),
+('images/THAI_0121.JPG', 2),
+('images/THAI_0178.JPG', 2),
+('images/THAI_0190 (2).JPG', 2),
+('images/THAI_0211.JPG', 2),
+('images/THAI_0317.JPG', 2),
+('images/THAI_0334.JPG', 2),
+('images/THAI_0336.JPG', 2),
+('images/THAI_0343 (2).JPG', 2),
+('images/THAI_0375.JPG', 2),
+('images/THAI_0443.JPG', 2),
+('images/THAI_0500.JPG', 2),
+('images/THAI_0510.JPG', 2);
+
+
+
