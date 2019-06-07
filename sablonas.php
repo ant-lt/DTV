@@ -28,6 +28,29 @@
 
 	$salis = $_GET["salis"];
 
+	if (isset($_GET["pateikti_kom"]) 
+		&& $_GET["elpastas"] !=""){
+
+		$vardas = $_GET["vardas"];
+		$elpastas = $_GET["elpastas"];
+		$komentaru_txt = $_GET["komentaru_txt"];
+		$ip = $_SERVER['HTTP_CLIENT_IP']?$_SERVER['HTTP_CLIENT_IP']:($_SERVER['HTTP_X_FORWARDED_FOR']?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
+
+
+		$sql_com_add = "INSERT INTO Comment (UserName, Email, User_IP, FreeText, CountryID)
+		VALUES ('$vardas', '$elpastas', '$ip', '$komentaru_txt', 1)";
+
+		if (mysqli_query($conn, $sql_com_add)) {
+		//	echo "New record created successfully";
+			header('Location: bendras.php');
+		//	header('Location: sablonas.php?salis='.$salis);
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+
+	}
+
+
 	$sql = "SELECT id, Name, Description, Foto FROM Country where Name='". $salis. "'";
 	
 	$result = mysqli_query($conn, $sql);
@@ -61,9 +84,38 @@
 			echo "</div>";
 
 			// echo "<p>" . $row["Foto"] . "</p> ";
-			echo "</div>";
 
-		// komentarai 
+// komentaru forma
+			echo "<div class='row'>";
+    		echo "<form class='col s12'>";
+
+      		echo "<div class='row'>";
+        	echo "<div class='input-field col s6'>";
+         	echo " <input id='c_name' type='text' class='validate' name='vardas'>";
+         	echo " <label for='c_name'>Jūsų vardas</label>";
+        	echo "</div>";
+
+       		echo "<div class='row'>";
+       		echo " <div class='input-field col s6'>";
+       		echo "   <input id='email' type='email' class='validate' name='elpastas'>";
+       		echo "   <label for='email'>Email</label>";
+       		echo " </div>";
+      		echo "</div>";
+   	
+        	echo "<div class='input-field col s12'>";
+        	echo "  <input id='comment_txt' type='text' class='validate' name='komentaru_txt'>";
+        	echo "  <label for='comment_txt'>Komentarai</label>";
+        	echo "</div>";
+      		echo "</div>";
+
+			echo "<button class='btn waves-effect waves-light' type='submit' name='pateikti_kom'>Pateikti";
+    		echo "<i class='material-icons right'>send</i>";
+  			echo "</button>";
+
+        	echo "</form>";
+    		echo "</div>";
+
+		// komentaru atvaizdavimas
 			$sql2 = "SELECT Comment_dt, UserName, Email, User_IP, FreeText FROM Comment INNER JOIN Country ON Comment.CountryID = Country.ID where Comment.CountryID=" . $row["id"];
 			$result2 = mysqli_query($conn, $sql2);
 			if (mysqli_num_rows($result2) > 0) {
@@ -82,6 +134,12 @@
 				}
 				echo "</div>";
 			}
+
+
+
+			echo "</div>";
+
+
 		}
 		echo "</div>";
 	} 
