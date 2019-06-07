@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<body>
+<body><?php include "menu.php"; ?>
 	<div class="dk-conteiner">
 		<h3>Meet our</h3>
 		<h1>DTV Dream Team</h1>
@@ -39,6 +39,7 @@
 			</div>
 			
 		</div>
+		
 	</div>
 
 
