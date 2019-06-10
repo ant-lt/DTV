@@ -17,7 +17,7 @@
 			<div class="dk-box">
 				<h3>Donatas Kuprys</h3>
 				<img src="./images/dk-foto.jpg">
-				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The funny one! Pomėgiai:
+				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The funny one:) <br>Pomėgiai:
 				Kelionės, muzika ir naujai atrastas WEB programavimas :)</p>
 				<br>
 				<a href="https://www.facebook.com/donatas.kuprys.9?ref=bookmarks" target="_blank" class="fa fa-facebook"></a>
@@ -27,7 +27,7 @@
 			<div class="dk-box">
 				<h3>Tomas Grainys</h3>
 				<img src="./images/tomas1.jpg">
-				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The smart one. :) Pomėgiai - knygos ir kelionės</p>
+				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The smart one :)<br>Pomėgiai - knygos ir kelionės</p>
 				<br>
 				<a href="https://www.facebook.com/tomas.grainys" target="_blank" class="fa fa-facebook"></a>
 				
@@ -35,7 +35,7 @@
 			<div class="dk-box">
 				<h3>Vitas Gruzdas</h3>
 				<img src="./images/20180603_085445v1.jpg">
-				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The Backend GURU :) Pomėgiai: užkietėjas žvejys</p>
+				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The Backend GURU :) <br>Pomėgiai: užkietėjas žvejys</p>
 				<br>
 				<a href="https://www.linkedin.com/in/vitas-gruzdas-05b59b127/" target="_blank"  class="fa fa-linkedin"></a>
 			</div>
