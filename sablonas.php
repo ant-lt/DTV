@@ -145,8 +145,8 @@ echo "<button onclick='topFunction()' id='butonUp' title='Į Pradžią'>Į Prad�
                	echo "<tr>";
                     echo "<th>Komentaro data</th>";
                     echo "<th>Vartotojo vardas</th>";
-                    echo "<th>El. paštas</th>";
-                    echo "<th>IP adresas</th>";
+                //    echo "<th>El. paštas</th>";
+                //    echo "<th>IP adresas</th>";
                     echo "<th>Komentarai</th>";
                 echo "</tr>";
               echo "</thead>";
@@ -164,8 +164,8 @@ echo "<button onclick='topFunction()' id='butonUp' title='Į Pradžią'>Į Prad�
                 echo "<tr>";
                 echo "<td>" . $row["Comment_dt"] . "</td>";
                 echo "<td>" . $row["UserName"]. "</td>";
-                echo "<td>" . $row["Email"] . "</td>";
-                echo "<td>" . $row["User_IP"] . "</td>";
+               // echo "<td>" . $row["Email"] . "</td>";
+               // echo "<td>" . $row["User_IP"] . "</td>";
                 echo "<td>" . $row["FreeText"] . "</td>";
                 echo "</tr>";
 				}
