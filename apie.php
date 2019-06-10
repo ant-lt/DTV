@@ -37,7 +37,7 @@
 				<img src="./images/20180603_085445v1.jpg">
 				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The Backend GURU :) Pomėgiai: užkietėjas žvejys</p>
 				<br>
-				<a href="https://www.linkedin.com/in/vitas-gruzdas-05b59b127/" class="fa fa-linkedin"></a>
+				<a href="https://www.linkedin.com/in/vitas-gruzdas-05b59b127/" target="_blank"  class="fa fa-linkedin"></a>
 			</div>
 			
 		</div>
