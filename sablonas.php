@@ -90,7 +90,7 @@
 			echo "<h1 class='center-align'>" . $row["Name"]. "</h1> ";
 						//echo "<p>" . $row["Description"] . "</p> ";
 			echo $row["Description"];
-echo "<button onclick='topFunction()' id='butonUp' title='Į Pradžią'>Į Pradžią</button>";
+echo "<button id='butonUp' title='Į Pradžią'>Į Pradžią</button>";
 
 
 			echo "</div>";
