@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Apie šalis trumpai</title>
+	<title>Find the world</title>
 
 	
 	<?php include "functions.php"; ?>
