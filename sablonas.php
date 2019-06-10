@@ -12,9 +12,9 @@
 	
 	<?php
 	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "DTV_DB";
+	$username = "coktai_vcs190610-a";
+	$password = "UHehhvwTGq8q3Xs5";
+	$dbname = "coktai_vcs190610-a";
 
 // Create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -37,14 +37,14 @@
 		$ip = $_SERVER['HTTP_CLIENT_IP']?$_SERVER['HTTP_CLIENT_IP']:($_SERVER['HTTP_X_FORWARDED_FOR']?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
 
 
-		$sql_com_sal = "SELECT id FROM Country where Name='". $salis. "'";
+		$sql_com_sal = "SELECT id FROM country where Name='". $salis. "'";
 		$result_com_sal = mysqli_query($conn, $sql_com_sal);
 		$row_com_sal = mysqli_fetch_assoc($result_com_sal);
 		$com_countryID =  $row_com_sal["id"];
 
 
 
-		$sql_com_add = "INSERT INTO Comment (UserName, Email, User_IP, FreeText, CountryID)
+		$sql_com_add = "INSERT INTO comment (UserName, Email, User_IP, FreeText, CountryID)
 		VALUES ('$vardas', '$elpastas', '$ip', '$komentaru_txt', $com_countryID)";
 
 		if (mysqli_query($conn, $sql_com_add)) {
@@ -58,7 +58,7 @@
 	}
 
 
-	$sql = "SELECT id, Name, Description, Foto FROM Country where Name='". $salis. "'";
+	$sql = "SELECT id, Name, Description, Foto FROM country where Name='". $salis. "'";
 	
 	$result = mysqli_query($conn, $sql);
 
@@ -73,7 +73,7 @@
 		while($row = mysqli_fetch_assoc($result)) {
 			echo "<div class='row tg-remelis'>";
 
-			$sql_car = "SELECT carusele_foto.Foto FROM carusele_foto INNER JOIN Country ON carusele_foto.CountryID = Country.ID where Country.Name='". $salis. "'";
+			$sql_car = "SELECT carusele_foto.Foto FROM carusele_foto INNER JOIN country ON carusele_foto.CountryID = country.ID where country.Name='". $salis. "'";
 			$result_car = mysqli_query($conn, $sql_car);
 			echo "<div class='carousel'>";
 			while($row_car = mysqli_fetch_assoc($result_car)) {
@@ -133,7 +133,7 @@ echo "<button id='butonUp' title='Į Pradžią'>Į Pradžią</button>";
     		echo "</div>";
 
 		// komentaru atvaizdavimas
-			$sql2 = "SELECT Comment_dt, UserName, Email, User_IP, FreeText FROM Comment INNER JOIN Country ON Comment.CountryID = Country.ID where Comment.CountryID=" . $row["id"];
+			$sql2 = "SELECT Comment_dt, UserName, Email, User_IP, FreeText FROM comment INNER JOIN country ON comment.CountryID = country.ID where comment.CountryID=" . $row["id"];
 			$result2 = mysqli_query($conn, $sql2);
 			if (mysqli_num_rows($result2) > 0) {
     			// output data of each row

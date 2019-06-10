@@ -1,9 +1,9 @@
-<!-- Šalių meniu užkrovimas iš DB -->
+﻿<!-- Šalių meniu užkrovimas iš DB -->
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "DTV_DB";
+$username = "coktai_vcs190610-a";
+$password = "UHehhvwTGq8q3Xs5";
+$dbname = "coktai_vcs190610-a";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -16,7 +16,7 @@ mysqli_set_charset($conn,"utf8");
   // echo "Prisijungti pavyko!";
 
 
-$sql = "SELECT Name FROM Country";
+$sql = "SELECT Name FROM country";
 
 $result = mysqli_query($conn, $sql);
 
@@ -65,19 +65,19 @@ mysqli_close($conn);
 
 <nav class="navigacija">
   <div class="nav-wrapper">
-    <a href="pagrindinis.php" class="brand-logo"><img class="brand-logo" src="images/logo2.jpg"> </a>
+    <a href="index.php" class="brand-logo"><img class="brand-logo" src="images/logo2.jpg"> </a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="pagrindinis.php">Pagrindinis</a></li>
+      <li><a href="index.php">Pagrindinis</a></li>
       <li><a href="apie.php">Apie mus</a></li>
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Šalys<i class="material-icons right">arrow_drop_down</i></a></li>
-      <li><a href="https://www.lotustravel.lt">Pagalba</a></li>
+      <li><a href="https://www.lotustravel.lt" target="_blank">Pagalba</a></li>
     </ul>
   </div>
 </nav>
 <ul class="sidenav" id="mobile-demo">
-  <li><a href="pagrindinis.php">Pagrindinis</a></li>
+  <li><a href="index.php">Pagrindinis</a></li>
   <li><a href="apie.php">Apie mus</a></li>
   <li><a class="dropdown-trigger" href="#!" data-target="dropdownMobile">Šalys<i class="material-icons right">arrow_drop_down</i></a></li>
   <li><a href="https://www.lotustravel.lt">Pagalba</a></li>

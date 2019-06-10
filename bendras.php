@@ -14,9 +14,9 @@
 
 		<?php
 		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$dbname = "DTV_DB";
+		$username = "coktai_vcs190610-a";
+		$password = "UHehhvwTGq8q3Xs5";
+		$dbname = "coktai_vcs190610-a";
 
 // Create connection
 		$conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -29,7 +29,7 @@
 	// echo "Prisijungti pavyko!";
 
 
-		$sql = "SELECT id, Name, Summary, Foto FROM Country";
+		$sql = "SELECT id, Name, Summary, Foto FROM country";
 
 		$result = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($result) > 0) {
