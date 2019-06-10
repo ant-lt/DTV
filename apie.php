@@ -12,6 +12,7 @@
 	<div class="dk-conteiner">
 		<h3>Meet our</h3>
 		<h1>DTV Dream Team</h1>
+		<img class="tg-dezute2 responsive-img" src="./images/komanda.jpg">
 		<div class="dk-boxes">
 			<div class="dk-box">
 				<h3>Donatas Kuprys</h3>
