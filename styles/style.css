@@ -168,11 +168,11 @@
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: red;
+  background-color: #FA8072;
   color: white;
   cursor: pointer;
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 50px;
 }
 #butonUp:hover {
   background-color: #555;
