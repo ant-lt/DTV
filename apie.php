@@ -34,12 +34,12 @@
 			</div>
 			<div class="dk-box">
 				<h3>Vitas Gruzdas</h3>
-				<img src="https://picsum.photos/150">
-				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The Backend GURU :)</p>
+				<img src="./images/20180603_085445v1.jpg">
+				<p class="dk-parg tg-rysku tg-remelis2 tg-inlineblock">The Backend GURU :) Pomėgiai: užkietėjas žvejys</p>
 				<br>
 				<a href="#" class="fa fa-facebook"></a>
 				<a href="#" class="fa fa-instagram"></a>
-				<a href="#" class="fa fa-linkedin"></a>
+				<a href="https://www.linkedin.com/in/vitas-gruzdas-05b59b127/" class="fa fa-linkedin"></a>
 			</div>
 			
 		</div>
