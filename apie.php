@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Apie mus</title>
+	<title>Find the world</title>
 	<?php include "functions.php"; ?>
 	<?php include "header.php"; ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +47,12 @@
 
 <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=vilnius%20ulon%C5%B3%205&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>SEO by <a href="https://www.yellowrocketagency.com">YellowRocketAgency.</a></div>
 
+
+
 </div>
+
+<button onclick="topFunction()" id="butonUp" title="Į Pradžią">Į Pradžią</button>
+
 
 <script type="text/javascript" src="js/materialize.min.js"></script>
 	<?php include "footer.php"; ?>

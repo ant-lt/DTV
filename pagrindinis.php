@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pagrindinis</title>
+	<title>Find the world</title>
 	<?php include "functions.php"; ?>
 	<?php include "header.php"; ?>
 </head>
